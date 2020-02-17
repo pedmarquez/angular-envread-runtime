@@ -7,22 +7,10 @@ import { environment } from '../environments/environment'
 })
 export class AppService {
 
-  constructor(private http: HttpClient) { }
+  env=environment;
+  
+  constructor() { }
 
-  configUrl = `${environment.production?'':''}assets/app.config.json`;
-  private configSettings: any = null;
-
-  get settings() {
-    return this.configSettings;
-  }
-
-  public load(): Promise<any> {
-      return new Promise((resolve, reject) => {
-        this.http.get(this.configUrl).subscribe((response: any) => {
-            this.configSettings = response;
-            resolve(true);
-      });
-    });
-  }
+ 
   
 }

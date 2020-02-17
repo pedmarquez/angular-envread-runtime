@@ -8,9 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { AppService } from './app.service'
 
-export function init_app(appService: AppService) {
-  return () => appService.load();
-}
+
 
 @NgModule({
   declarations: [
@@ -24,12 +22,7 @@ export function init_app(appService: AppService) {
     HttpClientModule
   ],
   providers: [
-    { 
-      provide: APP_INITIALIZER, 
-      useFactory: init_app, 
-      deps: [ AppService ], 
-      multi: true
-    }
+    
   ],
   bootstrap: [AppComponent]
 })

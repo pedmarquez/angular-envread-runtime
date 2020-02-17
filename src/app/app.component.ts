@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AppService } from './app.service'
-
+import { environment } from '../environments/environment'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,6 +11,6 @@ export class AppComponent {
   appData: any;
 
   constructor(private appService: AppService) {
-      this.appData = this.appService.settings;
+      this.appData = environment;
   }
 }
