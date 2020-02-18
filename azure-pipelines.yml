@@ -23,6 +23,7 @@ steps:
     keepToken: false
     tokenPrefix: '${'
     tokenSuffix: '}$'
+    
 - script: |
     npm install -g @angular/cli
     npm install
