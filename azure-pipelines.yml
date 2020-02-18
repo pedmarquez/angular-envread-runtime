@@ -24,7 +24,7 @@ steps:
     tokenPrefix: '${'
     tokenSuffix: '}$'
     
-- script: npx run build -- --prod
+- script: npx ng build --prod
   displayName: 'Build'
 - task: PublishPipelineArtifact@0
   inputs:
