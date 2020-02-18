@@ -21,8 +21,8 @@ steps:
     writeBOM: true
     actionOnMissing: 'warn'
     keepToken: false
-    tokenPrefix: '#{'
-    tokenSuffix: '}#'
+    tokenPrefix: '${'
+    tokenSuffix: '}$'
 - script: |
     npm install -g @angular/cli
     npm install
