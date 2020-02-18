@@ -23,11 +23,9 @@ steps:
     keepToken: false
     tokenPrefix: '${'
     tokenSuffix: '}$'
-- script: |
-    npm install -g @angular/cli
-    npm install
-    ng build --prod
-  displayName: 'npm install and build'
+    
+- script: npx ng build --prod
+  displayName: 'Build'
 - task: PublishPipelineArtifact@0
   inputs:
     artifactName: 'angular'
