@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AppService } from './app.service'
 import { environment } from '../environments/environment'
+import { setTheme } from 'ngx-bootstrap/utils';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,6 +12,7 @@ export class AppComponent {
   appData: any;
 
   constructor(private appService: AppService) {
+    setTheme('bs4'); 
       this.appData = environment;
   }
 }

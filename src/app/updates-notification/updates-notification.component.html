@@ -1,0 +1,20 @@
+<div
+    class="banner"
+    *ngIf="updateAvailable$ | async"
+>
+    <!-- We have published a new release!
+
+    <button
+        class="banner__link"
+        (click)="activateUpdate()"
+    >
+        Activate and reload
+    </button> -->
+
+    <alert type="warning" dismissible="true" (onClose)="closed$.next()">
+        <strong>  We have published a new release!</strong>  <button type="button" class="btn btn-primary"  (click)="activateUpdate()">
+            Activate and reload
+          </button>
+      </alert>
+   
+</div>
