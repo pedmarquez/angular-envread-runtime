@@ -1,43 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/clientes">Clientes</a>
+      </li>
+     
+   
+    </ul>
+  
+  </div>
+</nav>
 <app-header [settings]="appData"></app-header>
 
 
-<div class="tblclas">
-  <h2>Environment Configuration </h2>
-  <table *ngIf="appData" class="table table-striped">
-    <thead [ngStyle]="{background: appData.backgroundColor, color: 'white'}">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Key.</th>
-        <th scope="col">Value</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td scope="row">1</td>
-        <td>Name.</td>
-        <td>{{appData.name}}</td>
-      </tr>
-      <tr>
-        <td scope="row">2</td>
-        <td>Version</td>
-        <td>{{appData.version}}</td>
-      </tr>
-      <tr>
-        <td scope="row">3</td>
-        <td>Environment</td>
-        <td>{{appData.environment}}</td>
-      </tr>
-      <tr>
-        <td scope="row">4</td>
-        <td>Base Href</td>
-        <td>{{appData.basehref}}</td>
-      </tr>
-      <tr>
-        <td scope="row">5</td>
-        <td>Background Color</td>
-        <td>{{appData.backgroundColor}}</td>
-      </tr>
-    </tbody>
-  </table>
 
+  <router-outlet></router-outlet>
  <app-updates-notification></app-updates-notification>

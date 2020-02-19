@@ -11,7 +11,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
-import { UpdatesNotificationComponent } from './updates-notification/updates-notification.component'
+import { UpdatesNotificationComponent } from './updates-notification/updates-notification.component';
+import { ClientesComponent } from './clientes/clientes.component';
+import { HomeComponent } from './home/home.component'
 
 
 
@@ -20,7 +22,11 @@ import { UpdatesNotificationComponent } from './updates-notification/updates-not
     AppComponent,
     HeaderComponent,
     
-    UpdatesNotificationComponent
+    UpdatesNotificationComponent,
+    
+    ClientesComponent,
+    
+    HomeComponent
   ],
   imports: [
     BrowserModule,
