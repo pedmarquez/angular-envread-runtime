@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ApplicationRef } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
-import { merge, Observable, of, Subject } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { merge, Observable, of, Subject, interval, concat } from 'rxjs';
+import { map, first } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
 
@@ -14,7 +14,13 @@ export class UpdatesNotificationComponent {
     updateAvailable$: Observable<boolean>;
     closed$ = new Subject<void>();
 
-    constructor(private updates: SwUpdate) {
+    constructor(appRef: ApplicationRef, private updates: SwUpdate) {
+        const appIsStable$ = appRef.isStable.pipe(first(isStable => isStable === true));
+        const everySixHours$ = interval( 1000);
+        const everySixHoursOnceAppIsStable$ = concat(appIsStable$, everySixHours$);
+    
+        everySixHoursOnceAppIsStable$.subscribe(() => updates.checkForUpdate());
+        
         this.updateAvailable$ = merge(
             of(false),
             this.updates.available.pipe(map(() => true)),
