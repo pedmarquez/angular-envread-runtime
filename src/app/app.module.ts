@@ -13,7 +13,8 @@ import { AlertModule } from 'ngx-bootstrap/alert';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { UpdatesNotificationComponent } from './updates-notification/updates-notification.component';
 import { ClientesComponent } from './clientes/clientes.component';
-import { HomeComponent } from './home/home.component'
+import { HomeComponent } from './home/home.component';
+import { ProveedoresComponent } from './proveedores/proveedores.component'
 
 
 
@@ -26,7 +27,9 @@ import { HomeComponent } from './home/home.component'
     
     ClientesComponent,
     
-    HomeComponent
+    HomeComponent,
+    
+    ProveedoresComponent
   ],
   imports: [
     BrowserModule,
