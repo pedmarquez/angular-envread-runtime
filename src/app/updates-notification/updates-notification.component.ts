@@ -16,7 +16,7 @@ export class UpdatesNotificationComponent {
 
     constructor(appRef: ApplicationRef, private updates: SwUpdate) {
         const appIsStable$ = appRef.isStable.pipe(first(isStable => isStable === true));
-        const everySixHours$ = interval( 1000);
+        const everySixHours$ = interval( 1000*10);
         const everySixHoursOnceAppIsStable$ = concat(appIsStable$, everySixHours$);
     
         everySixHoursOnceAppIsStable$.subscribe(() => updates.checkForUpdate());
